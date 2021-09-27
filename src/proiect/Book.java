@@ -10,7 +10,7 @@ public class Book {
 	private List<String> images = new ArrayList<>();
 	private List<String> tables = new ArrayList<>();
 	
-	public Book(String name, List<String> paraghraps) {
+	public Book(String name, List<String> paragraphs) {
 		this.name = name;
 		this.paragraphs = paragraphs;
 	}
