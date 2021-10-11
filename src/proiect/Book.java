@@ -9,6 +9,7 @@ public class Book {
 	private List<String> paragraphs = new ArrayList<>();
 	private List<String> images = new ArrayList<>();
 	private List<String> tables = new ArrayList<>();
+	private Author author;
 	
 	public Book(String name, List<String> paragraphs) {
 		this.name = name;
@@ -22,6 +23,8 @@ public class Book {
 	public void print() {
 		
 		 System.out.println( "Name: " + name );
+		 System.out.print("Author name:");
+		 author.print();
 		 System.out.println( "Paragraphs: " + paragraphs );
 		 System.out.println( "Images: " + images );
 		 System.out.println( "Tables: " + tables);
@@ -37,6 +40,10 @@ public class Book {
 	
 	public void createNewTable(String table) {
 		this.tables.add(table);
+	}
+	
+	public void addAuthor(Author author) {
+		this.author = author;
 	}
 	
 }
