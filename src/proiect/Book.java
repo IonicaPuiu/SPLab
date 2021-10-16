@@ -8,6 +8,7 @@ public class Book {
 	private String name;
 	private List<Author> authors = new ArrayList<>();
 	private List<Chapter> chapters = new ArrayList<>();
+	private TableOfContents toc;
 	
 	public Book(String name) {
 		this.name = name;
@@ -26,7 +27,7 @@ public class Book {
 	}
 	
 	public int createChapter(String chapter) {
-		Chapter c = new Chapter(chapter);
+		Chapter c = new Chapter(chapter, this);
 		this.chapters.add(c);
 		return chapters.indexOf(c);
 	}

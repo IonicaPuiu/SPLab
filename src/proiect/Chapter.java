@@ -6,17 +6,19 @@ import java.util.List;
 public class Chapter {
 	private String name;
 	private List<SubChapter> subChapters = new ArrayList<>();
+	private Book book;
 	
-	public Chapter(String name) {
+	public Chapter(String name, Book book) {
 		this.name = name;
+		this.book = book;
 	}
 	
 	public void print() {
-		 System.out.println( name );
+		 System.out.println("Chapter with name: " + name);
 	}
 	
 	public int createSubChapter(String subChapter) {
-		SubChapter sc = new SubChapter(subChapter);
+		SubChapter sc = new SubChapter(subChapter, this);
 		this.subChapters.add(sc);
 		return subChapters.indexOf(sc);
 	}
