@@ -15,6 +15,9 @@ public class Chapter {
 	
 	public void print() {
 		 System.out.println("Chapter with name: " + name);
+		 for (SubChapter sc : subChapters) {
+	            sc.print();
+	        }
 	}
 	
 	public int createSubChapter(String subChapter) {
