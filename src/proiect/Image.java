@@ -1,13 +1,20 @@
 package proiect;
 
+import java.util.concurrent.TimeUnit;
+
 public class Image extends Element  {
 	private String imageName;
-	private SubChapter subChapter;
-	private Paragraph paragraph;
+//	private SubChapter subChapter;
+//	private Paragraph paragraph;
 	
 	public Image(String name) {
 		this.imageName = name;
 //		this.subChapter = sc;
+		try {
+		TimeUnit.SECONDS.sleep(5);
+		} catch (InterruptedException e) {
+		e.printStackTrace();
+		}
 	}
 	
 	public void print() {
