@@ -2,7 +2,7 @@ package proiect;
 
 import java.util.concurrent.TimeUnit;
 
-public class Image extends Element  {
+public class Image extends Element implements Picture {
 	private String imageName;
 //	private SubChapter subChapter;
 //	private Paragraph paragraph;
@@ -31,5 +31,10 @@ public class Image extends Element  {
 	 public Element get(int num) {
 	      return null;
 	 }
+	 
+	 @Override
+	    public String url() {
+	        return this.imageName;
+	    }
 
 }

@@ -44,9 +44,12 @@ public class main {
 
 		
 		long startTime = System.currentTimeMillis();
-		Image img1 = new Image("Pamela Anderson");
-		Image img2 = new Image("Kim Kardashian");
-		Image img3 = new Image("Kirby Griffin");
+//		Image img1 = new Image("Pamela Anderson");
+//		Image img2 = new Image("Kim Kardashian");
+//		Image img3 = new Image("Kirby Griffin");
+		ImageProxy img1 = new ImageProxy("Pamela Anderson");
+		ImageProxy img2 = new ImageProxy("Kim Kardashian");
+		ImageProxy img3 = new ImageProxy("Kirby Griffin");
 		Section playboyS1 = new Section("Front Cover");
 		playboyS1.add(img1);
 		Section playboyS2 = new Section("Summer Girls");
