@@ -4,12 +4,9 @@ import java.util.concurrent.TimeUnit;
 
 public class Image extends Element implements Picture {
 	private String imageName;
-//	private SubChapter subChapter;
-//	private Paragraph paragraph;
 	
 	public Image(String name) {
 		this.imageName = name;
-//		this.subChapter = sc;
 		try {
 		TimeUnit.SECONDS.sleep(5);
 		} catch (InterruptedException e) {
@@ -35,6 +32,25 @@ public class Image extends Element implements Picture {
 	 @Override
 	    public String url() {
 	        return this.imageName;
+	    }
+	 
+	   public void render() {
+	        System.out.println("Image with name: " + this.imageName);
+	        content().renderImage();
+	    }
+	   
+	   @Override
+	    public PictureContent content() {
+	        return new PictureContent(this.imageName);
+	    }
+
+	    @Override
+	    public void accept(Visitor visitor) {
+	        visitor.visit(this);
+	    }
+
+	    public String getImageName() {
+	        return imageName;
 	    }
 
 }

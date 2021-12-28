@@ -1,13 +1,11 @@
 package proiect;
 
-public class Table extends Element {
+public class Table extends Element implements Visitee {
 	private String title;
-	private SubChapter subChapter;
 	private Paragraph paragraph;
 	
 	public Table(String title) {
 		this.title = title;
-//		this.subChapter = sc;
 	}
 	
 	public void print() {
@@ -23,6 +21,19 @@ public class Table extends Element {
 	 @Override
 	 public Element get(int num) {
 	      return null;
+	 }
+	 
+	 public void render() {
+	        System.out.println("Table with Title: " + this.title);
+	 }
+	 
+	 @Override
+	 public void accept(Visitor visitor) {
+	      visitor.visit(this);
+	 }
+
+	 public String getTitle() {
+	     return title;
 	 }
 
 }

@@ -1,15 +1,13 @@
 package proiect;
 
-import java.util.concurrent.TimeUnit;
+import java.awt.*;
 
-public class ImageProxy extends Element implements Picture{
+public class ImageProxy extends Element implements Picture, Visitee{
 	private String url;
 	private Image realImg;
 	
 	public ImageProxy(String url) {
 		this.url = url;
-		this.realImg = null;
-
 	}
 	
 	public Image loadImage() {
@@ -19,9 +17,15 @@ public class ImageProxy extends Element implements Picture{
 		return realImg;
 	}
 	
-	public void print() {
+	@Override
+	void print() {
 		loadImage();
-		 realImg.print();
+		realImg.print();
+	}
+	
+	void render() {
+	       loadImage();
+	       realImg.print();
 	}
 	
 	 @Override
@@ -36,8 +40,18 @@ public class ImageProxy extends Element implements Picture{
 	 }
 	 
 	 @Override
-	    public String url() {
-	        return this.url;
-	    }
+	 public String url() {
+	      return this.url;
+	 }
+	 
+	 @Override
+	 public PictureContent content() {
+	      return null;
+	 }
+
+	 @Override
+	 public void accept(Visitor visitor) {
+	       visitor.visit(this);
+	 }
 
 }

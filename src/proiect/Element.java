@@ -3,7 +3,7 @@ package proiect;
 import java.util.LinkedList;
 import java.util.List;
 
-public abstract class Element {
+public abstract class Element implements Visitee {
     Element parent;
     abstract void print();
 

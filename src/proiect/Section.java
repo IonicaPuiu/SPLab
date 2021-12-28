@@ -3,7 +3,7 @@ package proiect;
 import java.util.LinkedList;
 import java.util.List;
 
-public class Section extends Element {
+public class Section extends Element  implements Visitee {
     String title;
     List<Element> elementList = new LinkedList<>();
 
@@ -35,5 +35,36 @@ public class Section extends Element {
         for (Element el:elementList) {
             el.print();
         }
+    }
+    
+    public void render() {
+        System.out.println(this.title);
+        for (Element el:elementList) {
+            el.print();
+        }
+    }
+
+    @Override
+    public void accept(Visitor visitor) {
+        visitor.visit(this);
+        for (Element el:elementList) {
+            el.accept(visitor);
+        }
+    }
+
+    public void setElementList(List<Element> elementList) {
+        this.elementList = elementList;
+    }
+
+    public List<Element> getElementList() {
+        return elementList;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getTitle() {
+        return title;
     }
 }
