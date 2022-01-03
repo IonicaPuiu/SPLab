@@ -18,3 +18,10 @@ All good
 https://github.com/IonicaPuiu/SPLab/tree/1b359d995f8d3fe26bf15475d62d9f17fad055b7
 
 all good
+
+# Feedback lab6:
+https://github.com/IonicaPuiu/SPLab/tree/f7a8993d49bdbccf6b37c9fb6a1d11b7329695a1
+
+TableOfContent should contain only a list of strings that represents section's titles.
+
+# Proposed grade: 9.5
